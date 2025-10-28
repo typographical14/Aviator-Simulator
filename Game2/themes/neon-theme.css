@@ -1,0 +1,251 @@
+/* 🌈 Neon Theme */
+:root {
+    --primary-color: #00ff88;
+    --secondary-color: #00ccff;
+    --accent-color: #ff0088;
+    --warning-color: #ffaa00;
+    --background-gradient: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2a2a2a);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background: var(--background-gradient);
+}
+
+.background-animation {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 204, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 0, 136, 0.05) 0%, transparent 50%);
+}
+
+.floating-shapes .shape {
+    background: rgba(0, 255, 136, 0.1);
+    animation: neonFloat 5s ease-in-out infinite;
+    box-shadow: 0 0 20px currentColor;
+}
+
+@keyframes neonFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% { 
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+.particles {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.8) 1px, transparent 0),
+        radial-gradient(circle at 90% 80%, rgba(0, 204, 255, 0.6) 1px, transparent 0),
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 136, 0.4) 2px, transparent 0);
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { 
+        opacity: 0.3;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        opacity: 0.8;
+        filter: hue-rotate(180deg);
+    }
+}
+
+.multiplier-display {
+    background: linear-gradient(180deg, #1a1a1a, #2a2a2a, #3a3a3a);
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    box-shadow: 
+        inset 0 0 50px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(0, 255, 136, 0.2);
+}
+
+.sky-background {
+    background: linear-gradient(to bottom, #0a0a0a, #1a1a1a, #2a2a2a);
+}
+
+.cloud {
+    background: rgba(255, 255, 255, 0.05);
+    animation: neonCloudMove 30s linear infinite;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.cloud::before,
+.cloud::after {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3);
+}
+
+.sun {
+    background: radial-gradient(circle, #ffaa00, #ff5500);
+    box-shadow: 
+        0 0 60px #ffaa00,
+        0 0 100px rgba(255, 170, 0, 0.7),
+        0 0 150px rgba(255, 170, 0, 0.5);
+    animation: neonSun 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonSun {
+    0% { 
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+    100% { 
+        transform: scale(1.1);
+        filter: hue-rotate(45deg);
+    }
+}
+
+.plane-body {
+    background: linear-gradient(135deg, #ffffff, #e8e8e8);
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255,255,255,0.8),
+        0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.plane-wing {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+}
+
+.plane-tail {
+    background: linear-gradient(135deg, var(--accent-color), #ff66aa);
+    box-shadow: 0 0 10px rgba(255, 0, 136, 0.6);
+}
+
+.plane-engine {
+    background: linear-gradient(135deg, #ffaa00, #ffdd00);
+    animation: neonEngine 0.5s ease-in-out infinite alternate;
+    box-shadow: 0 0 20px #ffaa00;
+}
+
+@keyframes neonEngine {
+    0% { 
+        box-shadow: 0 0 10px #ffaa00;
+        opacity: 0.8;
+    }
+    100% { 
+        box-shadow: 0 0 30px #ffdd00, 0 0 50px rgba(255, 221, 0, 0.7);
+        opacity: 1;
+    }
+}
+
+.contrail {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), transparent);
+    animation: neonTrail 0.4s linear infinite;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+@keyframes neonTrail {
+    0% { 
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
+    }
+    100% { 
+        transform: translateX(50px) scaleX(0.2);
+        opacity: 0;
+    }
+}
+
+.flight-path-animated {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 255, 136, 0.6) 20%, 
+        var(--primary-color) 50%, 
+        rgba(0, 255, 136, 0.6) 80%, 
+        transparent 100%);
+    box-shadow: 
+        0 0 30px rgba(0, 255, 136, 0.7),
+        0 0 60px rgba(0, 255, 136, 0.3);
+}
+
+.path-glow {
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--secondary-color), 
+        transparent);
+    animation: neonPathGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes neonPathGlow {
+    0%, 100% { 
+        opacity: 0.3;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        opacity: 1;
+        filter: hue-rotate(90deg);
+    }
+}
+
+.multiplier-text {
+    text-shadow: 
+        0 0 20px currentColor,
+        0 0 40px currentColor,
+        0 0 60px currentColor,
+        0 0 80px currentColor;
+    animation: neonText 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonText {
+    0% { 
+        filter: hue-rotate(0deg);
+        text-shadow: 
+            0 0 20px currentColor,
+            0 0 40px currentColor;
+    }
+    100% { 
+        filter: hue-rotate(60deg);
+        text-shadow: 
+            0 0 30px currentColor,
+            0 0 60px currentColor,
+            0 0 90px currentColor;
+    }
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 
+        0 4px 20px rgba(0, 255, 136, 0.5),
+        0 0 20px rgba(0, 255, 136, 0.3);
+    animation: neonButton 3s ease-in-out infinite;
+}
+
+@keyframes neonButton {
+    0%, 100% { 
+        box-shadow: 
+            0 4px 20px rgba(0, 255, 136, 0.5),
+            0 0 20px rgba(0, 255, 136, 0.3);
+    }
+    50% { 
+        box-shadow: 
+            0 4px 20px rgba(0, 255, 136, 0.7),
+            0 0 30px rgba(0, 255, 136, 0.5),
+            0 0 40px rgba(0, 255, 136, 0.3);
+    }
+}
+
+.btn-primary:hover:not(:disabled) {
+    box-shadow: 
+        0 6px 25px rgba(0, 255, 136, 0.7),
+        0 0 30px rgba(0, 255, 136, 0.5),
+        0 0 50px rgba(0, 255, 136, 0.3);
+}
+
+.status-win {
+    background: rgba(0, 255, 136, 0.15) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.leaderboard-item:hover {
+    box-shadow: 0 5px 25px rgba(0, 255, 136, 0.3);
+}
+
+.stat-card:hover {
+    box-shadow: 0 5px 20px rgba(0, 204, 255, 0.3);
+}

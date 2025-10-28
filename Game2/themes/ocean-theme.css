@@ -1,0 +1,126 @@
+/* 🌊 Ocean Theme */
+:root {
+    --primary-color: #06b6d4;
+    --secondary-color: #0ea5e9;
+    --accent-color: #ef4444;
+    --warning-color: #f59e0b;
+    --background-gradient: linear-gradient(135deg, #0c4a6e, #0369a1, #0284c7);
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background: var(--background-gradient);
+}
+
+.background-animation {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
+}
+
+.floating-shapes .shape {
+    background: rgba(6, 182, 212, 0.15);
+    animation: oceanFloat 6s ease-in-out infinite;
+}
+
+@keyframes oceanFloat {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+    50% { 
+        transform: translateY(-25px) rotate(10deg);
+        opacity: 1;
+    }
+}
+
+.particles {
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(173, 216, 230, 0.6) 1px, transparent 0),
+        radial-gradient(circle at 80% 70%, rgba(135, 206, 250, 0.4) 1px, transparent 0),
+        radial-gradient(circle at 40% 80%, rgba(176, 224, 230, 0.3) 2px, transparent 0);
+    animation: bubbleRise 8s linear infinite;
+}
+
+@keyframes bubbleRise {
+    0% { background-position: 0 0, 0 0, 0 0; }
+    100% { background-position: 0 -100px, 0 -150px, 0 -200px; }
+}
+
+.multiplier-display {
+    background: linear-gradient(180deg, #0c4a6e, #0369a1, #0284c7);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.sky-background {
+    background: linear-gradient(to bottom, #0ea5e9, #38bdf8, #7dd3fc);
+}
+
+.cloud {
+    background: rgba(255, 255, 255, 0.8);
+    animation: cloudMove 25s linear infinite;
+}
+
+.sun {
+    background: radial-gradient(circle, #fef3c7, #f59e0b);
+    box-shadow: 0 0 70px #f59e0b, 0 0 100px rgba(245, 158, 11, 0.6);
+    animation: sunReflection 4s ease-in-out infinite alternate;
+}
+
+@keyframes sunReflection {
+    0% { 
+        transform: scale(1);
+        box-shadow: 0 0 50px #f59e0b;
+    }
+    100% { 
+        transform: scale(1.15);
+        box-shadow: 0 0 90px #f59e0b, 0 0 130px rgba(245, 158, 11, 0.8);
+    }
+}
+
+.plane-body {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd, #7dd3fc);
+}
+
+.plane-wing {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.plane-engine {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.contrail {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), transparent);
+}
+
+.flight-path-animated {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(6, 182, 212, 0.7) 20%, 
+        var(--primary-color) 50%, 
+        rgba(6, 182, 212, 0.7) 80%, 
+        transparent 100%);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.6);
+}
+
+.multiplier-text {
+    text-shadow: 
+        0 0 30px currentColor,
+        0 0 60px currentColor,
+        0 0 90px currentColor;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.5);
+}
+
+.btn-primary:hover:not(:disabled) {
+    box-shadow: 0 6px 25px rgba(6, 182, 212, 0.7);
+}
+
+.status-win {
+    background: rgba(6, 182, 212, 0.2) !important;
+}

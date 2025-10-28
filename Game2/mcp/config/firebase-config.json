@@ -1,0 +1,26 @@
+{
+  "projectId": "aviator-simulator-4de09",
+  "apiKey": "AIzaSyBMBZVW_B0VuHNURn_85EhyRmdEB6Ls390",
+  "authDomain": "aviator-simulator-4de09.firebaseapp.com",
+  "storageBucket": "aviator-simulator-4de09.firebasestorage.app",
+  "messagingSenderId": "474026505293",
+  "appId": "1:474026505293:web:913fa95efa69672513d804",
+  "measurementId": "G-Q2FRQ36Z1Y",
+  "services": {
+    "auth": {
+      "enabled": true,
+      "providers": ["anonymous", "google"]
+    },
+    "firestore": {
+      "enabled": true,
+      "collections": ["users", "leaderboard", "analytics"]
+    },
+    "hosting": {
+      "enabled": true,
+      "site": "aviator-simulator-4de09"
+    },
+    "analytics": {
+      "enabled": true
+    }
+  }
+}

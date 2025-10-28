@@ -1,0 +1,40 @@
+{
+  "game": {
+    "name": "Aviator Simulator Pro",
+    "version": "2.0.0",
+    "initialBalance": 1000,
+    "maxBet": 1000,
+    "minBet": 1,
+    "themes": ["default", "space", "ocean", "neon"],
+    "features": {
+      "autoPlay": true,
+      "quickBets": true,
+      "soundEffects": true,
+      "animations": true,
+      "leaderboard": true,
+      "statistics": true
+    }
+  },
+  "multiplier": {
+    "minMultiplier": 1.0,
+    "maxMultiplier": 20.0,
+    "growthRate": 0.12,
+    "crashTimings": {
+      "min": 3000,
+      "max": 22000,
+      "variations": 30
+    }
+  },
+  "performance": {
+    "targetFPS": 60,
+    "maxMemoryUsage": 100,
+    "loadingTimeout": 10000,
+    "cacheStrategy": "aggressive"
+  },
+  "analytics": {
+    "trackEvents": true,
+    "trackErrors": true,
+    "trackPerformance": true,
+    "privacyMode": false
+  }
+}
