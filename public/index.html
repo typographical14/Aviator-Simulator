@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🚀 Aviator Simulator Pro</title>
+    <link rel="stylesheet" href="style.css" id="main-style">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#5bc0be">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Theme Stylesheets -->
+    <link rel="stylesheet" href="../themes/space-theme.css" id="space-theme" disabled>
+    <link rel="stylesheet" href="../themes/ocean-theme.css" id="ocean-theme" disabled>
+    <link rel="stylesheet" href="../themes/neon-theme.css" id="neon-theme" disabled>
+</head>
+<body>
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+        <button class="theme-btn active" data-theme="default">🌅 Default</button>
+        <button class="theme-btn" data-theme="space">🚀 Space</button>
+        <button class="theme-btn" data-theme="ocean">🌊 Ocean</button>
+        <button class="theme-btn" data-theme="neon">🌈 Neon</button>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        <div class="particles"></div>
+        <div class="animated-gradient"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="game-title">🚀 Aviator Simulator Pro</h1>
+            <div class="user-info">
+                <span id="username">Guest</span>
+                <button id="loginBtn" class="btn-auth">Sign In with Google</button>
+                <button id="logoutBtn" class="btn-auth" style="display: none;">Logout</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-area">
+                <div class="multiplier-display">
+                    <!-- Animated Sky Background -->
+                    <div class="sky-background">
+                        <div class="cloud cloud-1"></div>
+                        <div class="cloud cloud-2"></div>
+                        <div class="cloud cloud-3"></div>
+                        <div class="sun"></div>
+                        <div class="stars"></div>
+                    </div>
+                    
+                    <!-- Flight Graph -->
+                    <div class="flight-graph">
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="grid-line"></div>
+                        <div class="multiplier-line"></div>
+                        <div class="graph-points"></div>
+                    </div>
+                    
+                    <!-- Multiplier Display -->
+                    <div id="multiplier" class="multiplier-text">
+                        <span class="multiplier-value">1.00</span>
+                        <span class="multiplier-x">x</span>
+                    </div>
+                    
+                    <!-- Animated Plane -->
+                    <div class="plane-container">
+                        <div class="animated-plane">
+                            <div class="plane-body">
+                                <div class="plane-wing"></div>
+                                <div class="plane-tail"></div>
+                                <div class="plane-engine"></div>
+                                <div class="plane-cockpit"></div>
+                                <div class="contrail"></div>
+                                <div class="sparkle sparkle-1"></div>
+                                <div class="sparkle sparkle-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Animated Flight Path -->
+                    <div class="flight-path-animated">
+                        <div class="path-glow"></div>
+                    </div>
+
+                    <!-- Crash Point Indicator -->
+                    <div class="crash-indicator" id="crashIndicator">
+                        <div class="crash-line"></div>
+                        <div class="crash-text">Crash Point: <span id="crashValue">?</span>x</div>
+                    </div>
+                </div>
+
+                <!-- Game Stats -->
+                <div class="game-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Current Bet:</span>
+                        <span id="currentBet" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Potential Win:</span>
+                        <span id="potentialWin" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Highest Multiplier:</span>
+                        <span id="highestMultiplier" class="stat-value">1.00x</span>
+                    </div>
+                </div>
+
+                <div class="status-message" id="statusMessage">
+                    🎮 Welcome to Aviator Simulator Pro! Place your bet and start flying!
+                </div>
+
+                <div class="controls">
+                    <div class="balance-section">
+                        <label>💰 Balance:</label>
+                        <span id="balance">1000</span> coins
+                    </div>
+
+                    <div class="bet-section">
+                        <label for="betAmount">🎯 Bet Amount:</label>
+                        <div class="bet-controls">
+                            <button class="bet-btn" data-action="decrease">-</button>
+                            <input type="number" id="betAmount" min="1" max="1000" value="50">
+                            <button class="bet-btn" data-action="increase">+</button>
+                            <div class="quick-bets">
+                                <button class="quick-bet" data-amount="10">10</button>
+                                <button class="quick-bet" data-amount="50">50</button>
+                                <button class="quick-bet" data-amount="100">100</button>
+                                <button class="quick-bet" data-amount="500">500</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button id="startBtn" class="btn-primary">
+                            <span class="btn-icon">✈️</span>
+                            Start Round
+                        </button>
+                        <button id="cashoutBtn" class="btn-secondary" disabled>
+                            <span class="btn-icon">💰</span>
+                            Cash Out
+                        </button>
+                        <button id="autoBtn" class="btn-tertiary">
+                            <span class="btn-icon">⚡</span>
+                            Auto Play
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leaderboard-section">
+                <div class="section-header">
+                    <h2>🏆 Global Leaderboard</h2>
+                    <button id="refreshLeaderboard" class="refresh-btn">🔄</button>
+                </div>
+                <div id="leaderboard" class="leaderboard">
+                    <div class="loading">Loading leaderboard...</div>
+                </div>
+                
+                <!-- Player Stats -->
+                <div class="player-stats">
+                    <h3>📊 Your Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalGames">0</div>
+                            <div class="stat-label">Games Played</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalWins">0</div>
+                            <div class="stat-label">Games Won</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="winRate">0%</div>
+                            <div class="stat-label">Win Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalProfit">0</div>
+                            <div class="stat-label">Total Profit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics-compat.js"></script>
+
+    <!-- Game Scripts -->
+    <script src="firebase-compat.js"></script>
+    <script src="game.js"></script>
+
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Theme switching
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const theme = this.dataset.theme;
+                
+                // Update active button
+                document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Disable all theme stylesheets
+                document.querySelectorAll('link[rel="stylesheet"]:not(#main-style)').forEach(link => {
+                    link.disabled = true;
+                });
+                
+                // Enable selected theme
+                if (theme !== 'default') {
+                    const themeStyle = document.getElementById(`${theme}-theme`);
+                    if (themeStyle) {
+                        themeStyle.disabled = false;
+                    }
+                }
+                
+                // Save theme preference
+                localStorage.setItem('selectedTheme', theme);
+            });
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+        if (savedTheme !== 'default') {
+            const themeBtn = document.querySelector(`[data-theme="${savedTheme}"]`);
+            if (themeBtn) {
+                themeBtn.click();
+            }
+        }
+    </script>
+</body>
+</html>

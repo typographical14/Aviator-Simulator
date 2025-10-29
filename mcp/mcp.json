@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "aviator-game-manager": {
+      "command": "node",
+      "args": ["./mcp/mcp-server.js"],
+      "env": {
+        "NODE_ENV": "production",
+        "FIREBASE_PROJECT_ID": "aviator-simulator-4de09"
+      }
+    },
+    "aviator-deployer": {
+      "command": "node",
+      "args": ["./deploy-scripts/deploy-manager.js"],
+      "env": {
+        "DEPLOYMENT_ENV": "production"
+      }
+    }
+  }
+}
